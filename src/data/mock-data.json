@@ -1,0 +1,433 @@
+{
+  "data": [
+    {
+      "folderName": "Dota 2",
+      "order": 1,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 }
+      ]
+    },
+    {
+      "folderName": "CS:GO",
+      "order": 2,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 }
+      ]
+    },
+    {
+      "folderName": "PUBG",
+      "order": 3,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 }
+      ]
+    },
+    {
+      "folderName": "Fortnite",
+      "order": 4,
+      "subCategories": []
+    },
+    {
+      "folderName": "Apex Legends",
+      "order": 5,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 },
+        { "name": "SMGs", "order": 6 }
+      ]
+    },
+    {
+      "folderName": "Overwatch",
+      "order": 6,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 }
+      ]
+    },
+    {
+      "folderName": "Valorant",
+      "order": 7,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 }
+      ]
+    },
+    {
+      "folderName": "League of Legends",
+      "order": 8,
+      "subCategories": []
+    },
+    {
+      "folderName": "Call of Duty",
+      "order": 9,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 }
+      ]
+    },
+    {
+      "folderName": "Battlefield",
+      "order": 10,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 }
+      ]
+    },
+    {
+      "folderName": "Dota 2",
+      "order": 11,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 },
+        { "name": "SMGs", "order": 6 }
+      ]
+    },
+    {
+      "folderName": "CS:GO",
+      "order": 12,
+      "subCategories": []
+    },
+    {
+      "folderName": "PUBG",
+      "order": 13,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 }
+      ]
+    },
+    {
+      "folderName": "Fortnite",
+      "order": 14,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 }
+      ]
+    },
+    {
+      "folderName": "Apex Legends",
+      "order": 15,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 }
+      ]
+    },
+    {
+      "folderName": "Overwatch",
+      "order": 16,
+      "subCategories": []
+    },
+    {
+      "folderName": "Valorant",
+      "order": 17,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 },
+        { "name": "SMGs", "order": 6 }
+      ]
+    },
+    {
+      "folderName": "League of Legends",
+      "order": 18,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 }
+      ]
+    },
+    {
+      "folderName": "Call of Duty",
+      "order": 19,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 }
+      ]
+    },
+    {
+      "folderName": "Battlefield",
+      "order": 20,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 }
+      ]
+    },
+    {
+      "folderName": "Dota 2",
+      "order": 21,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 }
+      ]
+    },
+    {
+      "folderName": "CS:GO",
+      "order": 22,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 }
+      ]
+    },
+    {
+      "folderName": "PUBG",
+      "order": 23,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 },
+        { "name": "SMGs", "order": 6 }
+      ]
+    },
+    {
+      "folderName": "Fortnite",
+      "order": 24,
+      "subCategories": []
+    },
+    {
+      "folderName": "Apex Legends",
+      "order": 25,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 }
+      ]
+    },
+    {
+      "folderName": "Overwatch",
+      "order": 26,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 }
+      ]
+    },
+    {
+      "folderName": "Valorant",
+      "order": 27,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 }
+      ]
+    },
+    {
+      "folderName": "League of Legends",
+      "order": 28,
+      "subCategories": []
+    },
+    {
+      "folderName": "Call of Duty",
+      "order": 29,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 },
+        { "name": "SMGs", "order": 6 }
+      ]
+    },
+    {
+      "folderName": "Battlefield",
+      "order": 30,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 }
+      ]
+    },
+    {
+      "folderName": "Dota 2",
+      "order": 31,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 }
+      ]
+    },
+    {
+      "folderName": "CS:GO",
+      "order": 32,
+      "subCategories": []
+    },
+    {
+      "folderName": "PUBG",
+      "order": 33,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 }
+      ]
+    },
+    {
+      "folderName": "Fortnite",
+      "order": 34,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 }
+      ]
+    },
+    {
+      "folderName": "Apex Legends",
+      "order": 35,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 },
+        { "name": "SMGs", "order": 6 }
+      ]
+    },
+    {
+      "folderName": "Overwatch",
+      "order": 36,
+      "subCategories": []
+    },
+    {
+      "folderName": "Valorant",
+      "order": 37,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 }
+      ]
+    },
+    {
+      "folderName": "League of Legends",
+      "order": 38,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 }
+      ]
+    },
+    {
+      "folderName": "Call of Duty",
+      "order": 39,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 }
+      ]
+    },
+    {
+      "folderName": "Battlefield",
+      "order": 40,
+      "subCategories": []
+    },
+    {
+      "folderName": "Dota 2",
+      "order": 41,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 },
+        { "name": "SMGs", "order": 6 }
+      ]
+    },
+    {
+      "folderName": "CS:GO",
+      "order": 42,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 }
+      ]
+    },
+    {
+      "folderName": "PUBG",
+      "order": 43,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 }
+      ]
+    },
+    {
+      "folderName": "Fortnite",
+      "order": 44,
+      "subCategories": []
+    },
+    {
+      "folderName": "Apex Legends",
+      "order": 45,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 }
+      ]
+    },
+    {
+      "folderName": "Overwatch",
+      "order": 46,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 }
+      ]
+    },
+    {
+      "folderName": "Valorant",
+      "order": 47,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 },
+        { "name": "Pistols", "order": 4 },
+        { "name": "Rifles", "order": 5 },
+        { "name": "SMGs", "order": 6 }
+      ]
+    },
+    {
+      "folderName": "League of Legends",
+      "order": 48,
+      "subCategories": []
+    },
+    {
+      "folderName": "Call of Duty",
+      "order": 49,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 }
+      ]
+    },
+    {
+      "folderName": "Battlefield",
+      "order": 50,
+      "subCategories": [
+        { "name": "Gloves", "order": 1 },
+        { "name": "Heavy", "order": 2 },
+        { "name": "Knives", "order": 3 }
+      ]
+    }
+  ]
+}
