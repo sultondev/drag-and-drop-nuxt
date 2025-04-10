@@ -1,0 +1,23 @@
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.gap-y-2 {
+    column-gap: 8px;
+}
+
+
+@media (min-width: 1024px) {
+    .container {
+
+    }
+}

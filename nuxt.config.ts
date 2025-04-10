@@ -8,5 +8,13 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@pinia/nuxt',
   ],
-    srcDir: './src',
+  srcDir: './src',
+  css: ['assets/main.css'],
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        verbatimModuleSyntax: true
+      }
+    }
+  }
 })

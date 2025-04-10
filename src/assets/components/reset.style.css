@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--primary-text-color);
+}
+
+:root {
+    --primary-dark: #101319;
+    --secondary-dark: #161A23;
+
+    --primary-text-color: #ffffff;
+    --primary-gray: #92A1BF;
+
+    --primary-purple: #725DF8;
+    --light-gray-dark: #333B4D;
+}
+
+button {
+    -webkit-appearance: none;
+    border-radius: 0;
+    text-align: inherit;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    color: inherit;
+    font: inherit;
+}
