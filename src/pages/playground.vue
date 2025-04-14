@@ -3,6 +3,7 @@ import DragDropItem from "~/components/UI/DragDropItem.vue";
 import DraggableInquiry from "~/components/UI/DraggableInquiry.vue";
 import type { GameListItem } from "~/types/components/drag-drop-item.types";
 
+const beingDragover = ref(false);
 const dataList: GameListItem[] = [
   {
     folderName: "Call of Duty",
@@ -45,11 +46,7 @@ const dataList: GameListItem[] = [
 ];
 
 const inquiriesStore = useInquiriesStore();
-const pageForm = reactive({
-  pageSize: 10,
-  pageIndex: 1,
-  totalItems: 156,
-});
+
 // При маунте страницы, если список обращений пустой, загружаем данные из API
 onMounted(async () => {
   inquiriesStore.initializeFromStorage();
@@ -128,36 +125,25 @@ function handleDrop(
   // Обновляем состояние с сохранением истории
   inquiriesStore.updateInquiries([...currentList]);
 }
+
+function dragEnd(event: DragEvent) {
+  event.preventDefault();
+
+  // Retrieve the element's id
+  const id = event.dataTransfer?.getData("text/plain");
+  if (id) {
+    const draggedElement = document.getElementById(id);
+    event.target?.appendChild(draggedElement);
+  }
+
+  // Move the original element to the drop zone
+}
 </script>
 
 <template>
-  <div class="container page-wrapper">
-    <header class="header flex items-center justify-between">
-      <div class="header-left flex items-center">
-        <h1 class="header__title">Game List</h1>
-
-        <UIIndicator variant="neon-green">
-          <span class="header__info"> Found: {{ dataList?.length }} </span>
-        </UIIndicator>
-      </div>
-      <div class="flex gap-x-3">
-        <UIButton
-          variant="secondary"
-          class="action__btn"
-          @click="inquiriesStore.undo"
-        >
-          <Icon name="icon-park-outline:return" class="undo__icon" />
-        </UIButton>
-        <UIButton
-          variant="secondary"
-          class="action__btn"
-          @click="inquiriesStore.redo"
-        >
-          <Icon name="icon-park-outline:return" class="redo__icon" />
-        </UIButton>
-      </div>
-    </header>
-    <div class="main-content flex flex-col gap-y-1">
+  <div class="">
+    <span class=""> playground </span>
+    <div class="container flex flex-col gap-y-1">
       <DragDropItem
         v-for="(item, index) in dataList"
         :data="item"
@@ -166,55 +152,35 @@ function handleDrop(
         :index-number="String(index + 1)"
       />
     </div>
-    <footer class="flex justify-between items-center">
-      <span>
-        showing {{ pageForm.pageSize }} of {{ pageForm.totalItems }}
-      </span>
 
-      <UIPagination
-        v-model="pageForm.pageIndex"
-        :size="pageForm.pageSize"
-        :total="pageForm.totalItems"
-      />
-    </footer>
+    <div
+      @dragover="
+        (e) => {
+          e.preventDefault();
+          beingDragover = true;
+        }
+      "
+      @dragleave="
+        (e) => {
+          e.preventDefault();
+          beingDragover = false;
+        }
+      "
+      @drop="dragEnd"
+      class="zone"
+      :class="{ zone__over: beingDragover }"
+    ></div>
   </div>
 </template>
 
 <style scoped>
-.page-wrapper {
-  padding: 60px;
+.zone {
+  width: 100%;
+  height: 100px;
+  background: #fff;
 }
 
-.main-content {
-  padding: 34px 0;
-}
-
-.header-left {
-  column-gap: 14px;
-}
-.header__title {
-  font-weight: 600;
-  font-size: 28px;
-  line-height: 36px;
-  vertical-align: middle;
-  color: var(--milk-white);
-}
-
-.header__info {
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0px;
-  color: var(--primary-dark);
-  vertical-align: middle;
-}
-
-.action__btn {
-  padding: 8px;
-  height: fit-content;
-}
-
-.redo__icon {
-  transform: scaleX(-1);
+.zone__over {
+  background: red;
 }
 </style>

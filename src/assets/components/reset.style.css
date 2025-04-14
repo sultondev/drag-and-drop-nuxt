@@ -1,30 +1,45 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    color: var(--primary-text-color);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--primary-text-color);
+  font-family: "Manrope";
 }
 
 :root {
-    --primary-dark: #101319;
-    --secondary-dark: #161A23;
+  --primary-dark: #101319;
+  --secondary-dark: #161a23;
 
-    --primary-text-color: #ffffff;
-    --primary-gray: #92A1BF;
+  --primary-text-color: #ffffff;
+  --primary-gray: #92a1bf;
 
-    --primary-purple: #725DF8;
-    --light-gray-dark: #333B4D;
+  --primary-purple: #725df8;
+  --secondary-light-purple: #282540;
+  --light-gray-dark: #333b4d;
+
+  --dark-gray: #1f242e;
+  --light-dark-gray: #272d3b;
+
+  --dark-green: #1e3c3c;
+  --light-green: #58e2b0;
+
+  --milk-white: #e5edff;
+  --easy-dark: #1b1f28;
 }
 
 button {
-    -webkit-appearance: none;
-    border-radius: 0;
-    text-align: inherit;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-    cursor: pointer;
-    border: none;
-    color: inherit;
-    font: inherit;
+  -webkit-appearance: none;
+  border-radius: 0;
+  text-align: inherit;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
+
+ul {
+  list-style: none;
 }

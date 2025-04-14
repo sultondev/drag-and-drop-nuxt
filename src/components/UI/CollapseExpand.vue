@@ -48,7 +48,7 @@ watch(
   () => dimension,
   () => {
     clearCachedDimensions();
-  }
+  },
 );
 
 /* Transition hook methods – note that the parameter is now of type `Element`.

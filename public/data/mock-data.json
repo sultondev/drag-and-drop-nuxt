@@ -3,430 +3,1180 @@
     {
       "folderName": "Dota 2",
       "order": 1,
+      "id": "uuid-1",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-1-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-1-2"
+        }
       ]
     },
     {
       "folderName": "CS:GO",
       "order": 2,
+      "id": "uuid-2",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-2-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-2-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-2-3"
+        }
       ]
     },
     {
       "folderName": "PUBG",
       "order": 3,
+      "id": "uuid-3",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-3-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-3-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-3-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-3-4"
+        }
       ]
     },
     {
       "folderName": "Fortnite",
       "order": 4,
+      "id": "uuid-4",
       "subCategories": []
     },
     {
       "folderName": "Apex Legends",
       "order": 5,
+      "id": "uuid-5",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 },
-        { "name": "SMGs", "order": 6 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-5-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-5-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-5-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-5-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-5-5"
+        },
+        {
+          "folderName": "SMGs",
+          "order": 6,
+          "subCategories": [],
+          "id": "uuid-5-6"
+        }
       ]
     },
     {
       "folderName": "Overwatch",
       "order": 6,
+      "id": "uuid-6",
       "subCategories": [
-        { "name": "Gloves", "order": 1 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-6-1"
+        }
       ]
     },
     {
       "folderName": "Valorant",
       "order": 7,
+      "id": "uuid-7",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-7-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-7-2"
+        }
       ]
     },
     {
       "folderName": "League of Legends",
       "order": 8,
+      "id": "uuid-8",
       "subCategories": []
     },
     {
       "folderName": "Call of Duty",
       "order": 9,
+      "id": "uuid-9",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-9-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-9-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-9-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-9-4"
+        }
       ]
     },
     {
       "folderName": "Battlefield",
       "order": 10,
+      "id": "uuid-10",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-10-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-10-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-10-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-10-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-10-5"
+        }
       ]
     },
     {
       "folderName": "Dota 2",
       "order": 11,
+      "id": "uuid-11",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 },
-        { "name": "SMGs", "order": 6 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-11-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-11-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-11-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-11-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-11-5"
+        },
+        {
+          "folderName": "SMGs",
+          "order": 6,
+          "subCategories": [],
+          "id": "uuid-11-6"
+        }
       ]
     },
     {
       "folderName": "CS:GO",
       "order": 12,
+      "id": "uuid-12",
       "subCategories": []
     },
     {
       "folderName": "PUBG",
       "order": 13,
+      "id": "uuid-13",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-13-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-13-2"
+        }
       ]
     },
     {
       "folderName": "Fortnite",
       "order": 14,
+      "id": "uuid-14",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-14-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-14-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-14-3"
+        }
       ]
     },
     {
       "folderName": "Apex Legends",
       "order": 15,
+      "id": "uuid-15",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-15-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-15-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-15-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-15-4"
+        }
       ]
     },
     {
       "folderName": "Overwatch",
       "order": 16,
+      "id": "uuid-16",
       "subCategories": []
     },
     {
       "folderName": "Valorant",
       "order": 17,
+      "id": "uuid-17",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 },
-        { "name": "SMGs", "order": 6 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-17-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-17-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-17-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-17-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-17-5"
+        },
+        {
+          "folderName": "SMGs",
+          "order": 6,
+          "subCategories": [],
+          "id": "uuid-17-6"
+        }
       ]
     },
     {
       "folderName": "League of Legends",
       "order": 18,
+      "id": "uuid-18",
       "subCategories": [
-        { "name": "Gloves", "order": 1 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-18-1"
+        }
       ]
     },
     {
       "folderName": "Call of Duty",
       "order": 19,
+      "id": "uuid-19",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-19-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-19-2"
+        }
       ]
     },
     {
       "folderName": "Battlefield",
       "order": 20,
+      "id": "uuid-20",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-20-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-20-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-20-3"
+        }
       ]
     },
     {
       "folderName": "Dota 2",
       "order": 21,
+      "id": "uuid-21",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-21-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-21-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-21-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-21-4"
+        }
       ]
     },
     {
       "folderName": "CS:GO",
       "order": 22,
+      "id": "uuid-22",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-22-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-22-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-22-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-22-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-22-5"
+        }
       ]
     },
     {
       "folderName": "PUBG",
       "order": 23,
+      "id": "uuid-23",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 },
-        { "name": "SMGs", "order": 6 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-23-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-23-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-23-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-23-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-23-5"
+        },
+        {
+          "folderName": "SMGs",
+          "order": 6,
+          "subCategories": [],
+          "id": "uuid-23-6"
+        }
       ]
     },
     {
       "folderName": "Fortnite",
       "order": 24,
+      "id": "uuid-24",
       "subCategories": []
     },
     {
       "folderName": "Apex Legends",
       "order": 25,
+      "id": "uuid-25",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-25-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-25-2"
+        }
       ]
     },
     {
       "folderName": "Overwatch",
       "order": 26,
+      "id": "uuid-26",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-26-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-26-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-26-3"
+        }
       ]
     },
     {
       "folderName": "Valorant",
       "order": 27,
+      "id": "uuid-27",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-27-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-27-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-27-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-27-4"
+        }
       ]
     },
     {
       "folderName": "League of Legends",
       "order": 28,
+      "id": "uuid-28",
       "subCategories": []
     },
     {
       "folderName": "Call of Duty",
       "order": 29,
+      "id": "uuid-29",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 },
-        { "name": "SMGs", "order": 6 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-29-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-29-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-29-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-29-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-29-5"
+        },
+        {
+          "folderName": "SMGs",
+          "order": 6,
+          "subCategories": [],
+          "id": "uuid-29-6"
+        }
       ]
     },
     {
       "folderName": "Battlefield",
       "order": 30,
+      "id": "uuid-30",
       "subCategories": [
-        { "name": "Gloves", "order": 1 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-30-1"
+        }
       ]
     },
     {
       "folderName": "Dota 2",
       "order": 31,
+      "id": "uuid-31",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-31-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-31-2"
+        }
       ]
     },
     {
       "folderName": "CS:GO",
       "order": 32,
+      "id": "uuid-32",
       "subCategories": []
     },
     {
       "folderName": "PUBG",
       "order": 33,
+      "id": "uuid-33",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-33-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-33-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-33-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-33-4"
+        }
       ]
     },
     {
       "folderName": "Fortnite",
       "order": 34,
+      "id": "uuid-34",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-34-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-34-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-34-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-34-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-34-5"
+        }
       ]
     },
     {
       "folderName": "Apex Legends",
       "order": 35,
+      "id": "uuid-35",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 },
-        { "name": "SMGs", "order": 6 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-35-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-35-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-35-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-35-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-35-5"
+        },
+        {
+          "folderName": "SMGs",
+          "order": 6,
+          "subCategories": [],
+          "id": "uuid-35-6"
+        }
       ]
     },
     {
       "folderName": "Overwatch",
       "order": 36,
+      "id": "uuid-36",
       "subCategories": []
     },
     {
       "folderName": "Valorant",
       "order": 37,
+      "id": "uuid-37",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-37-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-37-2"
+        }
       ]
     },
     {
       "folderName": "League of Legends",
       "order": 38,
+      "id": "uuid-38",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-38-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-38-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-38-3"
+        }
       ]
     },
     {
       "folderName": "Call of Duty",
       "order": 39,
+      "id": "uuid-39",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-39-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-39-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-39-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-39-4"
+        }
       ]
     },
     {
       "folderName": "Battlefield",
       "order": 40,
+      "id": "uuid-40",
       "subCategories": []
     },
     {
       "folderName": "Dota 2",
       "order": 41,
+      "id": "uuid-41",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 },
-        { "name": "SMGs", "order": 6 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-41-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-41-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-41-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-41-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-41-5"
+        },
+        {
+          "folderName": "SMGs",
+          "order": 6,
+          "subCategories": [],
+          "id": "uuid-41-6"
+        }
       ]
     },
     {
       "folderName": "CS:GO",
       "order": 42,
+      "id": "uuid-42",
       "subCategories": [
-        { "name": "Gloves", "order": 1 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-42-1"
+        }
       ]
     },
     {
       "folderName": "PUBG",
       "order": 43,
+      "id": "uuid-43",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-43-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-43-2"
+        }
       ]
     },
     {
       "folderName": "Fortnite",
       "order": 44,
+      "id": "uuid-44",
       "subCategories": []
     },
     {
       "folderName": "Apex Legends",
       "order": 45,
+      "id": "uuid-45",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-45-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-45-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-45-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-45-4"
+        }
       ]
     },
     {
       "folderName": "Overwatch",
       "order": 46,
+      "id": "uuid-46",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-46-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-46-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-46-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-46-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-46-5"
+        }
       ]
     },
     {
       "folderName": "Valorant",
       "order": 47,
+      "id": "uuid-47",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 },
-        { "name": "Pistols", "order": 4 },
-        { "name": "Rifles", "order": 5 },
-        { "name": "SMGs", "order": 6 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-47-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-47-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-47-3"
+        },
+        {
+          "folderName": "Pistols",
+          "order": 4,
+          "subCategories": [],
+          "id": "uuid-47-4"
+        },
+        {
+          "folderName": "Rifles",
+          "order": 5,
+          "subCategories": [],
+          "id": "uuid-47-5"
+        },
+        {
+          "folderName": "SMGs",
+          "order": 6,
+          "subCategories": [],
+          "id": "uuid-47-6"
+        }
       ]
     },
     {
       "folderName": "League of Legends",
       "order": 48,
+      "id": "uuid-48",
       "subCategories": []
     },
     {
       "folderName": "Call of Duty",
       "order": 49,
+      "id": "uuid-49",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-49-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-49-2"
+        }
       ]
     },
     {
       "folderName": "Battlefield",
       "order": 50,
+      "id": "uuid-50",
       "subCategories": [
-        { "name": "Gloves", "order": 1 },
-        { "name": "Heavy", "order": 2 },
-        { "name": "Knives", "order": 3 }
+        {
+          "folderName": "Gloves",
+          "order": 1,
+          "subCategories": [],
+          "id": "uuid-50-1"
+        },
+        {
+          "folderName": "Heavy",
+          "order": 2,
+          "subCategories": [],
+          "id": "uuid-50-2"
+        },
+        {
+          "folderName": "Knives",
+          "order": 3,
+          "subCategories": [],
+          "id": "uuid-50-3"
+        }
       ]
     }
   ]
