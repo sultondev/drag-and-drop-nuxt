@@ -6,55 +6,79 @@ import Actions from "~/components/UI/Actions.vue";
 import { GAME_LIST_ACTIONS } from "~/constants/actions-list.constant";
 import Indicator from "~/components/UI/Indicator.vue";
 
-const { data, indexNumber, onDrop, isSubCategories, order } =
+const { data, parentIdx, itemIdx, onDrop, isSubCategories, order } =
   defineProps<IDragProps>();
 
-// Локальные ссылки для работы с DOM, если требуется
 const elementRef = ref<HTMLElement | null>(null);
-// Обработчик начала перетаскивания
+const isDropZoneActive = ref(false)
+const isActionsOpen = ref(false)
+
 const onDragStart = (event: DragEvent) => {
-  event.dataTransfer?.setData("text/plain", data.id);
-  event.target?.classList?.add('dragging')
-  // Можно задать эффект, например: event.dataTransfer.effectAllowed = 'move'
+  const target = event.target as HTMLElement;
+  isActionsOpen.value = false
+  event.dataTransfer?.setData("text/plain", event.target?.attributes['data-finder-id'].value);
+  target?.classList?.add('dragging')
 };
 
 const onDragEnd = (event: DragEvent) => {
-  event.target?.classList?.remove('dragging');
-  // Можно задать эффект, например: event.dataTransfer.effectAllowed = 'move'
+  const target = event.target as HTMLElement;
+  target?.classList?.remove('dragging');
+  isDropZoneActive.value = false
+
 };
 
 
-// Обработчик перетаскивания над элементом
 const onDragOver = (event: DragEvent) => {
-  event.preventDefault(); // разрешаем drop
-  // Можно определить позицию курсора и визуальные подсказки
+  event.preventDefault();
+  nextTick(() => {
+    isDropZoneActive.value = true
+  })
 };
 
-// Обработчик отпускания
+const onDragLeave = (event: DragEvent) => {
+  event.preventDefault();
+  isDropZoneActive.value = false
+}
+
 const onDropHandler = (event: DragEvent) => {
-  console.log(event)
   const dragId = event.dataTransfer?.getData("text/plain");
 
-  // Здесь определяется, куда именно был помещён элемент:
-  // — до, после или внутрь данного элемента, в зависимости от положения курсора
   const dropPosition: "before" | "after" | "inside" = "inside"; // пример, далее рассчитать динамически
   if (dragId) {
-    onDrop(dragId, data.id, dropPosition);
+    onDrop(event)
+    nextTick(() => {
+      isDropZoneActive.value = false
+    })
   }
 };
 const isCollapseOpen = ref(false);
+const finderId = computed(() => {
+  return `${parentIdx ? parentIdx + '.' : ''}${itemIdx}`
+})
+
+const indexNumber = computed(() => {
+  const parents = parentIdx ? parentIdx.split('.').map(item => Number(item) + 1) : [];
+  return `${parentIdx ? parents.join('.') + '.' : ''}${Number(itemIdx) + 1}`
+})
+
 </script>
 
 <template>
+  <div :class="{'parent-wrapper': !parentIdx}">
     <div
-      class="wrapper "
-      :class="{ 'wrapper-sub': isSubCategories }"
+      class="wrapper"
+      :class="{
+        'wrapper-sub': isSubCategories,
+        'zone': isDropZoneActive
+      }"
       ref="elementRef"
       draggable="true"
       :id="data.id"
+      :data-finder-id="finderId"
       @dragstart="onDragStart"
       @dragover="onDragOver"
-      @drop="onDropHandler"
+      @drop="onDrop"
+      @dragleave="onDragLeave"
       @dragend="onDragEnd"
     >
       <div class="item" :class="{'has-sub': data?.subCategories?.length > 0}">
@@ -103,39 +127,48 @@ const isCollapseOpen = ref(false);
             {{data?.subCategories?.length}}
           </Indicator>
           <UIButton
+              v-if="data?.subCategories?.length > 0"
             @click="isCollapseOpen = !isCollapseOpen"
             class="collapse-btn flex-center"
             :class="{ 'collapse-btn__open': isCollapseOpen }"
           >
             <Icon name="tabler:chevron-down" />
           </UIButton>
-          <Actions :actions="GAME_LIST_ACTIONS" />
+          <Actions v-model="isActionsOpen" :actions="GAME_LIST_ACTIONS" />
         </div>
       </div>
-      <CollapseExpand
+    </div>
+
+    <CollapseExpand
         dimension="height"
         :duration="400"
         easing="ease-in-out"
         name="drag-drop-collapse"
-      >
-        <div v-show="isCollapseOpen" class="">
-          <DragDropItem
+    >
+      <div v-show="isCollapseOpen" class="">
+        <DragDropItem
             v-for="(item, subIdx) in data.subCategories"
             :data="item"
-            :index-number="`${indexNumber}.${subIdx + 1}`"
+            :parent-idx="finderId"
+            :item-idx="String(subIdx)"
             is-sub-categories
             :on-drop="onDropHandler"
             :order="subIdx"
-          />
-        </div>
-      </CollapseExpand>
-    </div>
+            :key="item.id+subIdx"
+        />
+      </div>
+    </CollapseExpand>
+  </div>
 </template>
 
 <style scoped>
+.parent-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 .wrapper {
   background-color: var(--secondary-dark);
-  border-radius: 12px;
 }
 
 .item {
@@ -209,5 +242,11 @@ const isCollapseOpen = ref(false);
 
 .counter {
   margin-right: 8px;
+}
+
+.zone {
+  height: 73px;
+  background-color: var(--secondary-light-purple);
+  border: 1px dashed var(--primary-purple);
 }
 </style>

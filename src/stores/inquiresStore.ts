@@ -1,71 +1,69 @@
-// /stores/inquiriesStore.ts
-import type { Inquiry } from "~/types";
-import { ref, computed } from "vue";
+// stores/inquiries.ts
+import type { GameListItem } from '~/types/components/drag-drop-item.types'
 
-export const useInquiriesStore = defineStore("inquiries", () => {
-  // Основной список обращений
-  const inquiries = ref<Inquiry[]>([]);
+export const useInquiriesStore = defineStore('inquiries', () => {
+  const inquiries = ref<GameListItem[]>([])
+  const history = ref<GameListItem[][]>([])
+  const future = ref<GameListItem[][]>([])
 
-  // История изменений (храним копии состояния)
-  const history = ref<Inquiry[][]>([]);
-  let historyIndex = ref<number>(-1);
-  const maxHistory = 20;
+  // ========== Actions ==========
 
-  // Функция для фиксации нового состояния
-  function pushHistory(newState: Inquiry[]) {
-    // Обрезаем историю, если текущий индекс не равен последнему
-    if (historyIndex.value < history.value.length - 1) {
-      history.value = history.value.slice(0, historyIndex.value + 1);
-    }
-    history.value.push(JSON.parse(JSON.stringify(newState)));
-    if (history.value.length > maxHistory) {
-      history.value.shift();
-    }
-    historyIndex.value = history.value.length - 1;
-    // Сохраняем историю в localStorage для постоянства
-    localStorage.setItem("inquiriesHistory", JSON.stringify(history.value));
+  function updateInquiries(newData: GameListItem[]) {
+    saveToHistory()
+    inquiries.value = newData
+    future.value = []
+    persist()
   }
 
-  // Функции Undo и Redo
   function undo() {
-    if (historyIndex.value > 0) {
-      historyIndex.value--;
-      inquiries.value = JSON.parse(
-        JSON.stringify(history.value[historyIndex.value]),
-      );
-      // сохраняем обновлённое состояние
-      localStorage.setItem("inquiriesState", JSON.stringify(inquiries.value));
+    if (history.value.length === 0) return
+
+    const current = JSON.parse(JSON.stringify(inquiries.value))
+    future.value.unshift(current)
+
+    const lastState = history.value.pop()
+    if (lastState) {
+      inquiries.value = lastState
+      persist()
     }
   }
 
   function redo() {
-    if (historyIndex.value < history.value.length - 1) {
-      historyIndex.value++;
-      inquiries.value = JSON.parse(
-        JSON.stringify(history.value[historyIndex.value]),
-      );
-      localStorage.setItem("inquiriesState", JSON.stringify(inquiries.value));
+    if (future.value.length === 0) return
+
+    const current = JSON.parse(JSON.stringify(inquiries.value))
+    history.value.push(current)
+
+    const nextState = future.value.shift()
+    if (nextState) {
+      inquiries.value = nextState
+      persist()
     }
   }
 
-  // Функция обновления состояния (например, после Drag & Drop)
-  function updateInquiries(newList: Inquiry[]) {
-    inquiries.value = newList;
-    pushHistory(newList);
-    localStorage.setItem("inquiriesState", JSON.stringify(newList));
+  function saveToHistory() {
+    const snapshot = JSON.parse(JSON.stringify(inquiries.value))
+    history.value.push(snapshot)
+
+    if (history.value.length > 20) {
+      history.value.shift()
+    }
   }
 
-  // Инициализация состояния из localStorage (если данные сохранены)
+  function persist() {
+    localStorage.setItem('inquiries', JSON.stringify(inquiries.value))
+    localStorage.setItem('history', JSON.stringify(history.value))
+    localStorage.setItem('future', JSON.stringify(future.value))
+  }
+
   function initializeFromStorage() {
-    const storedState = localStorage.getItem("inquiriesState");
-    const storedHistory = localStorage.getItem("inquiriesHistory");
-    if (storedState) {
-      inquiries.value = JSON.parse(storedState);
-    }
-    if (storedHistory) {
-      history.value = JSON.parse(storedHistory);
-      historyIndex.value = history.value.length - 1;
-    }
+    const saved = localStorage.getItem('inquiries')
+    const savedHistory = localStorage.getItem('history')
+    const savedFuture = localStorage.getItem('future')
+
+    if (saved) inquiries.value = JSON.parse(saved)
+    if (savedHistory) history.value = JSON.parse(savedHistory)
+    if (savedFuture) future.value = JSON.parse(savedFuture)
   }
 
   return {
@@ -73,7 +71,7 @@ export const useInquiriesStore = defineStore("inquiries", () => {
     updateInquiries,
     undo,
     redo,
-    pushHistory,
     initializeFromStorage,
-  };
-});
+    saveToHistory
+  }
+})
