@@ -12,4 +12,5 @@ export interface IDragProps {
   onDrop: (event: DragEvent) => void;
   isSubCategories?: boolean;
   order: number;
+  isLastItem?: boolean;
 }

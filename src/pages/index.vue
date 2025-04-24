@@ -52,6 +52,7 @@ const pageForm = reactive({
 });
 // При маунте страницы, если список обращений пустой, загружаем данные из API
 onMounted(async () => {
+  inquiriesStore.setOriginalData(dataList.value)
   inquiriesStore.initializeFromStorage();
   // localStorage.setItem('inquiries', JSON.stringify(dataList.value))
   // if (!inquiriesStore.inquiries.length) {
@@ -63,19 +64,14 @@ onMounted(async () => {
 });
 
 function onDrop(event: DragEvent) {
-  const fromPath = event.dataTransfer?.getData('text/plain')?.split('.').map(Number)
-  const toPath = (event.currentTarget as HTMLElement)?.dataset.finderId?.split('.').map(Number)
+  const fromPath = event.dataTransfer?.getData("text/plain")
+  const toPath = (event.currentTarget as HTMLElement)?.dataset.finderId
 
-  if (!fromPath || !toPath) return
-  if (fromPath.join('.') === toPath.join('.')) return
+  if (!fromPath || !toPath || fromPath === toPath) return
 
-  const cloned = JSON.parse(JSON.stringify(inquiriesStore.inquiries))
-  const success = swapItemsInSameParent(cloned, fromPath, toPath)
-
-  if (success) {
-    inquiriesStore.updateInquiries(cloned)
-  }
+  inquiriesStore.moveItemByFinderPath(fromPath, toPath)
 }
+
 
 onMounted(() => {
   inquiriesStore.initializeFromStorage()
@@ -116,7 +112,7 @@ onMounted(() => {
         :order="index"
         :on-drop="onDrop"
         :item-idx="String(index)"
-        is-first-parent
+        is-last-item
         :key="item.id"
       />
     </div>

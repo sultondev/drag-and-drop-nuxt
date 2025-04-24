@@ -1,9 +1,11 @@
 import type { GameListItem } from '~/types/components/drag-drop-item.types'
 
-function getParentList(root: GameListItem[], path: number[]): GameListItem[] | null {
-    if (path.length === 1) return root
+// utils/getParentList.ts
+
+export function getParentList(data: GameListItem[], path: number[]): GameListItem[] | null {
+    if (path.length === 1) return data
     const parentPath = path.slice(0, -1)
-    let current: GameListItem = root[parentPath[0]]
+    let current: GameListItem = data[parentPath[0]]
 
     for (let i = 1; i < parentPath.length; i++) {
         if (!current.subCategories) return null

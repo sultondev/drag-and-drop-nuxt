@@ -69,7 +69,8 @@ const indexNumber = computed(() => {
       class="wrapper"
       :class="{
         'wrapper-sub': isSubCategories,
-        'zone': isDropZoneActive
+        'zone': isDropZoneActive,
+        'the-last-item':isLastItem && !isCollapseOpen
       }"
       ref="elementRef"
       draggable="true"
@@ -145,7 +146,7 @@ const indexNumber = computed(() => {
         easing="ease-in-out"
         name="drag-drop-collapse"
     >
-      <div v-show="isCollapseOpen" class="">
+      <div v-show="isCollapseOpen" class="sub-items">
         <DragDropItem
             v-for="(item, subIdx) in data.subCategories"
             :data="item"
@@ -153,6 +154,7 @@ const indexNumber = computed(() => {
             :item-idx="String(subIdx)"
             is-sub-categories
             :on-drop="onDropHandler"
+            :is-last-item="subIdx === data?.subCategories?.length - 1"
             :order="subIdx"
             :key="item.id+subIdx"
         />
@@ -162,9 +164,14 @@ const indexNumber = computed(() => {
 </template>
 
 <style scoped>
-.parent-wrapper {
-  border-radius: 12px;
-  overflow: hidden;
+.parent-wrapper > .wrapper {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.the-last-item {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .wrapper {
