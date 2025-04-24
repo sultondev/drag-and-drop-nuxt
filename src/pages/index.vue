@@ -1,68 +1,48 @@
 <script setup lang="ts">
 import DragDropItem from "~/components/UI/DragDropItem.vue";
 import type { GameListItem } from "~/types/components/drag-drop-item.types";
-import {swapItemsInSameParent} from "@/utils/reorder.utils.ts"
 
-const dataList = ref<GameListItem[]>([
-  {
-    folderName: "Call of Duty",
-    order: 49,
-    id: "uuid-49",
-    subCategories: [
-      { folderName: "Gloves", order: 1, subCategories: [], id: "uuid-49-1" },
-      {
-        folderName: "Heavy",
-        order: 2,
-        subCategories: [
-          {
-            folderName: "Gloves",
-            order: 1,
-            subCategories: [
-              {
-                folderName: "Heavy",
-                order: 2,
-                subCategories: [],
-                id: "uuid-50-22",
-              },
-            ],
-            id: "uuid-5230-1",
-          },
-        ],
-        id: "uuid-49-2",
-      },
-    ],
-  },
-  {
-    folderName: "Battlefield",
-    order: 50,
-    id: "uuid-50",
-    subCategories: [
-      { folderName: "Gloves", order: 1, subCategories: [], id: "uuid-50-1" },
-      { folderName: "Heavy", order: 2, subCategories: [], id: "uuid-50-2" },
-      { folderName: "Knives", order: 3, subCategories: [], id: "uuid-50-3" },
-    ],
-  },
-]);
+const inquiriesStore = useInquiriesStore()
 
-const inquiriesStore = useInquiriesStore();
 const pageForm = reactive({
   pageSize: 10,
   pageIndex: 1,
-  totalItems: 156,
-});
-// При маунте страницы, если список обращений пустой, загружаем данные из API
-onMounted(async () => {
-  inquiriesStore.setOriginalData(dataList.value)
-  inquiriesStore.initializeFromStorage();
-  // localStorage.setItem('inquiries', JSON.stringify(dataList.value))
-  // if (!inquiriesStore.inquiries.length) {
-  //   const { data } = await useFetch("/api/inquiries?page=1&perPage=10");
-  //   if (data.value) {
-  //     inquiriesStore.updateInquiries(data.value.data);
-  //   }
-  // }
-});
+  totalItems: 0,
+})
 
+async function loadPageData(page = 1) {
+  const { data } = await useFetch('/api/inquiries', {
+    query: {
+      page,
+      perPage: pageForm.pageSize
+    }
+  })
+  console.log(data)
+
+  if (data.value) {
+    const serverData = data.value.data as GameListItem[]
+    pageForm.totalItems = data.value.pagination?.total || serverData.length
+
+    // Sync store logic
+    inquiriesStore.setOriginalData(serverData)
+    inquiriesStore.currentPage = page
+    inquiriesStore.replayHistoryForPage(page)
+  }
+}
+
+// Initial load
+onMounted(async () => {
+  inquiriesStore.initializeFromStorage()
+})
+
+await loadPageData(pageForm.pageIndex)
+
+// Re-fetch on pageIndex change
+watch(() => pageForm.pageIndex, async (page) => {
+  await loadPageData(page)
+})
+
+// Drag handler (reorder)
 function onDrop(event: DragEvent) {
   const fromPath = event.dataTransfer?.getData("text/plain")
   const toPath = (event.currentTarget as HTMLElement)?.dataset.finderId
@@ -71,13 +51,7 @@ function onDrop(event: DragEvent) {
 
   inquiriesStore.moveItemByFinderPath(fromPath, toPath)
 }
-
-
-onMounted(() => {
-  inquiriesStore.initializeFromStorage()
-})
 </script>
-
 <template>
   <div class="container page-wrapper">
     <header class="header flex items-center justify-between">
@@ -85,7 +59,7 @@ onMounted(() => {
         <h1 class="header__title">Game List</h1>
 
         <UIIndicator variant="neon-green">
-          <span class="header__info"> Found: {{ dataList?.length }} </span>
+          <span class="header__info"> Found: {{ inquiriesStore.inquiries?.length }} </span>
         </UIIndicator>
       </div>
       <div class="flex gap-x-3">

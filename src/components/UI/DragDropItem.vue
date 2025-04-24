@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { IDragProps } from "@/types/components/drag-drop-item.types";
-import type { Inquiry } from "~/types";
 import CollapseExpand from "~/components/UI/CollapseExpand.vue";
 import Actions from "~/components/UI/Actions.vue";
 import { GAME_LIST_ACTIONS } from "~/constants/actions-list.constant";
