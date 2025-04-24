@@ -1,16 +1,27 @@
-import { readFileSync } from "node:fs"
-import { join } from "path"
+import type {GameListItem} from "~/types/components/drag-drop-item.types";
 
-export default defineEventHandler((event) => {
+export default defineEventHandler(async (event) => {
     const query = getQuery(event)
     const page = Number(query.page || 1)
     const perPage = Number(query.perPage || 10)
 
-    const filePath = join(process.cwd(), 'src', 'server', 'data', 'inquiries.json')
-    const content = readFileSync(filePath, 'utf-8')
-    const allData = JSON.parse(content)
+    const allData = await useStorage('assets:server').getItem(`inquiries.json`) as GameListItem[]
 
-    const total = allData.length
+    if (allData == null) {
+        return {
+            success: false,
+            data: [],
+            pagination: {
+                total: 0,
+                perPage,
+                currentPage: 1,
+                hasNext: true,
+                hasPrevious: true,
+            }
+        }
+    }
+
+    const total = allData?.length
     const start = (page - 1) * perPage
     const end = start + perPage
     const paginated = allData.slice(start, end)

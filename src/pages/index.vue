@@ -34,7 +34,7 @@ onMounted(async () => {
   inquiriesStore.initializeFromStorage()
 })
 
-// await loadPageData(pageForm.pageIndex)
+await loadPageData(pageForm.pageIndex)
 
 // Re-fetch on pageIndex change
 watch(() => pageForm.pageIndex, async (page) => {
