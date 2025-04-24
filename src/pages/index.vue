@@ -17,7 +17,6 @@ async function loadPageData(page = 1) {
       perPage: pageForm.pageSize
     }
   })
-  console.log(data)
 
   if (data.value) {
     const serverData = data.value.data as GameListItem[]
@@ -35,7 +34,7 @@ onMounted(async () => {
   inquiriesStore.initializeFromStorage()
 })
 
-await loadPageData(pageForm.pageIndex)
+// await loadPageData(pageForm.pageIndex)
 
 // Re-fetch on pageIndex change
 watch(() => pageForm.pageIndex, async (page) => {
