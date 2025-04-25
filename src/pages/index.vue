@@ -2,53 +2,52 @@
 import DragDropItem from "~/components/UI/DragDropItem.vue";
 import type { GameListItem } from "~/types/components/drag-drop-item.types";
 
-const inquiriesStore = useInquiriesStore()
+const inquiriesStore = useInquiriesStore();
 
 const pageForm = reactive({
   pageSize: 10,
   pageIndex: 1,
   totalItems: 0,
-})
+});
 
 async function loadPageData(page = 1) {
-  const { data } = await useFetch('/api/inquiries', {
+  const { data } = await useFetch("/api/inquiries", {
     query: {
       page,
-      perPage: pageForm.pageSize
-    }
-  })
+      perPage: pageForm.pageSize,
+    },
+  });
 
   if (data.value) {
-    const serverData = data.value.data as GameListItem[]
-    pageForm.totalItems = data.value.pagination?.total || serverData.length
+    const serverData = data.value.data as GameListItem[];
+    pageForm.totalItems = data.value.pagination?.total || serverData.length;
 
-    // Sync store logic
-    inquiriesStore.setOriginalData(serverData)
-    inquiriesStore.currentPage = page
-    inquiriesStore.replayHistoryForPage(page)
+    inquiriesStore.setOriginalData(serverData);
+    inquiriesStore.currentPage = page;
+    inquiriesStore.replayHistoryForPage(page);
   }
 }
 
-// Initial load
 onMounted(async () => {
-  inquiriesStore.initializeFromStorage()
-})
+  inquiriesStore.initializeFromStorage();
+});
 
-await loadPageData(pageForm.pageIndex)
+await loadPageData(pageForm.pageIndex);
 
-// Re-fetch on pageIndex change
-watch(() => pageForm.pageIndex, async (page) => {
-  await loadPageData(page)
-})
+watch(
+  () => pageForm.pageIndex,
+  async (page) => {
+    await loadPageData(page);
+  },
+);
 
-// Drag handler (reorder)
 function onDrop(event: DragEvent) {
-  const fromPath = event.dataTransfer?.getData("text/plain")
-  const toPath = (event.currentTarget as HTMLElement)?.dataset.finderId
+  const fromPath = event.dataTransfer?.getData("text/plain");
+  const toPath = (event.currentTarget as HTMLElement)?.dataset.finderId;
 
-  if (!fromPath || !toPath || fromPath === toPath) return
+  if (!fromPath || !toPath || fromPath === toPath) return;
 
-  inquiriesStore.moveItemByFinderPath(fromPath, toPath)
+  inquiriesStore.moveItemByFinderPath(fromPath, toPath);
 }
 </script>
 <template>
@@ -58,7 +57,9 @@ function onDrop(event: DragEvent) {
         <h1 class="header__title">Game List</h1>
 
         <UIIndicator variant="neon-green">
-          <span class="header__info"> Found: {{ inquiriesStore.inquiries?.length }} </span>
+          <span class="header__info">
+            Found: {{ inquiriesStore.inquiries?.length }}
+          </span>
         </UIIndicator>
       </div>
       <div class="flex gap-x-3">
@@ -81,12 +82,12 @@ function onDrop(event: DragEvent) {
     <div class="main-content flex flex-col gap-y-1">
       <DragDropItem
         v-for="(item, index) in inquiriesStore.inquiries"
+        :key="item.id"
         :data="item"
         :order="index"
         :on-drop="onDrop"
         :item-idx="String(index)"
         is-last-item
-        :key="item.id"
       />
     </div>
 

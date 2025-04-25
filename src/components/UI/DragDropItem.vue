@@ -9,67 +9,74 @@ const { data, parentIdx, itemIdx, onDrop, isSubCategories, order } =
   defineProps<IDragProps>();
 
 const elementRef = ref<HTMLElement | null>(null);
-const isDropZoneActive = ref(false)
-const isActionsOpen = ref(false)
+const isDropZoneActive = ref(false);
+const isActionsOpen = ref(false);
 
 const onDragStart = (event: DragEvent) => {
   const target = event.target as HTMLElement;
-  isActionsOpen.value = false
-  event.dataTransfer?.setData("text/plain", event.target?.attributes['data-finder-id'].value);
-  target?.classList?.add('dragging')
+  isActionsOpen.value = false;
+  event.dataTransfer?.setData(
+    "text/plain",
+    event.target?.attributes["data-finder-id"].value,
+  );
+  target?.classList?.add("dragging");
 };
 
 const onDragEnd = (event: DragEvent) => {
   const target = event.target as HTMLElement;
-  target?.classList?.remove('dragging');
-  isDropZoneActive.value = false
-
+  target?.classList?.remove("dragging");
+  isDropZoneActive.value = false;
 };
-
 
 const onDragOver = (event: DragEvent) => {
   event.preventDefault();
   nextTick(() => {
-    isDropZoneActive.value = true
-  })
+    isDropZoneActive.value = true;
+  });
 };
 
 const onDragLeave = (event: DragEvent) => {
   event.preventDefault();
-  isDropZoneActive.value = false
-}
+  isDropZoneActive.value = false;
+};
 
 const onDropHandler = (event: DragEvent) => {
   const dragId = event.dataTransfer?.getData("text/plain");
-
-  const dropPosition: "before" | "after" | "inside" = "inside"; // пример, далее рассчитать динамически
   if (dragId) {
-    onDrop(event)
+    onDrop(event);
     nextTick(() => {
-      isDropZoneActive.value = false
-    })
+      isDropZoneActive.value = false;
+    });
   }
 };
+
+const parentDropHandler = (event: DragEvent) => {
+  onDrop(event);
+  nextTick(() => {
+    isDropZoneActive.value = false;
+  });
+}
 const isCollapseOpen = ref(false);
 const finderId = computed(() => {
-  return `${parentIdx ? parentIdx + '.' : ''}${itemIdx}`
-})
+  return `${parentIdx ? parentIdx + "." : ""}${itemIdx}`;
+});
 
 const indexNumber = computed(() => {
-  const parents = parentIdx ? parentIdx.split('.').map(item => Number(item) + 1) : [];
-  return `${parentIdx ? parents.join('.') + '.' : ''}${Number(itemIdx) + 1}`
-})
-
+  const parents = parentIdx
+    ? parentIdx.split(".").map((item) => Number(item) + 1)
+    : [];
+  return `${parentIdx ? parents.join(".") + "." : ""}${Number(itemIdx) + 1}`;
+});
 </script>
 
 <template>
-  <div :class="{'parent-wrapper': !parentIdx}">
+  <div :class="{ 'parent-wrapper': !parentIdx }">
     <div
       class="wrapper"
       :class="{
         'wrapper-sub': isSubCategories,
         'zone': isDropZoneActive,
-        'the-last-item':isLastItem && !isCollapseOpen
+        'the-last-item': isLastItem && !isCollapseOpen,
       }"
       ref="elementRef"
       draggable="true"
@@ -77,11 +84,11 @@ const indexNumber = computed(() => {
       :data-finder-id="finderId"
       @dragstart="onDragStart"
       @dragover="onDragOver"
-      @drop="onDrop"
+      @drop="parentDropHandler"
       @dragleave="onDragLeave"
       @dragend="onDragEnd"
     >
-      <div class="item" :class="{'has-sub': data?.subCategories?.length > 0}">
+      <div class="item" :class="{ 'has-sub': data?.subCategories?.length > 0 }">
         <div class="flex flex-col gap-2">
           <span class="item-index labels"> № </span>
           <span class="">
@@ -99,35 +106,36 @@ const indexNumber = computed(() => {
           </span>
         </div>
         <div class="flex flex-col gap-2">
-          <span class="item-index labels">
-            order
-          </span>
+          <span class="item-index labels"> order </span>
           <span class="">
-            {{order + 1}}
+            {{ order + 1 }}
           </span>
         </div>
         <div v-if="data?.subCategories?.length > 0" class="flex flex-col gap-2">
           <span class="item-index labels"> sub categories </span>
           <div class="flex">
-              <span class="sub-category">
-                <template
-                  v-for="(item, idx) in data.subCategories"
-                  :key="item.folderName"
-                  class=""
-                >
-                  {{
-                    `${item.folderName} ${idx + 1 !== data.subCategories?.length ? " / " : ""}`
-                  }}
-                </template>
-              </span>
+            <span class="sub-category">
+              <template
+                v-for="(item, idx) in data.subCategories"
+                :key="item.folderName"
+              >
+                {{
+                  `${item.folderName} ${idx + 1 !== data.subCategories?.length ? " / " : ""}`
+                }}
+              </template>
+            </span>
           </div>
         </div>
         <div class="flex items-center flex-end gap-2">
-          <Indicator v-if="data?.subCategories?.length > 0" variant="success" class="counter">
-            {{data?.subCategories?.length}}
+          <Indicator
+            v-if="data?.subCategories?.length > 0"
+            variant="success"
+            class="counter"
+          >
+            {{ data?.subCategories?.length }}
           </Indicator>
           <UIButton
-              v-if="data?.subCategories?.length > 0"
+            v-if="data?.subCategories?.length > 0"
             @click="isCollapseOpen = !isCollapseOpen"
             class="collapse-btn flex-center"
             :class="{ 'collapse-btn__open': isCollapseOpen }"
@@ -140,22 +148,22 @@ const indexNumber = computed(() => {
     </div>
 
     <CollapseExpand
-        dimension="height"
-        :duration="400"
-        easing="ease-in-out"
-        name="drag-drop-collapse"
+      dimension="height"
+      :duration="400"
+      easing="ease-in-out"
+      name="drag-drop-collapse"
     >
       <div v-show="isCollapseOpen" class="sub-items">
         <DragDropItem
-            v-for="(item, subIdx) in data.subCategories"
-            :data="item"
-            :parent-idx="finderId"
-            :item-idx="String(subIdx)"
-            is-sub-categories
-            :on-drop="onDropHandler"
-            :is-last-item="subIdx === data?.subCategories?.length - 1"
-            :order="subIdx"
-            :key="item.id+subIdx"
+          v-for="(item, subIdx) in data.subCategories"
+          :data="item"
+          :parent-idx="finderId"
+          :item-idx="String(subIdx)"
+          is-sub-categories
+          :on-drop="onDropHandler"
+          :is-last-item="subIdx === data?.subCategories?.length - 1"
+          :order="subIdx"
+          :key="item.id + subIdx"
         />
       </div>
     </CollapseExpand>
@@ -169,8 +177,8 @@ const indexNumber = computed(() => {
 }
 
 .the-last-item {
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
 }
 
 .wrapper {

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import {computed, onMounted} from "vue";
 import { useRouter, useRoute } from "vue-router";
 import type { IPaginationProps } from "~/types/components/pagination.types.ts";
 
-const {total, size, maxView = 5} = defineProps<IPaginationProps>();
+const { total, size, maxView = 5 } = defineProps<IPaginationProps>();
 const currentPage = defineModel<number>({
   default: 1,
 });
@@ -21,7 +21,6 @@ function goToPage(page: number) {
 
 const paginationItems = computed(() => {
   const total = pages.value;
-  const current = currentPage.value;
   const items: (number | string)[] = [];
 
   if (total <= maxView + 2) {
@@ -37,8 +36,8 @@ const paginationItems = computed(() => {
   if (showLeftDots) items.push("...");
 
   const start = Math.max(
-      2,
-      Math.min(currentPage.value - Math.floor(maxView / 2), total - maxView)
+    2,
+    Math.min(currentPage.value - Math.floor(maxView / 2), total - maxView),
   );
   const end = Math.min(total - 1, start + maxView - 1);
 
@@ -51,31 +50,35 @@ const paginationItems = computed(() => {
   items.push(total); // Always show last page
   return items;
 });
+
+onMounted(() => {
+  currentPage.value = Number(route.query?.page || 1);
+})
 </script>
 
 <template>
   <ul class="pagination-list flex items-center">
     <li class="page__item">
       <button
-          class="link"
-          @click="goToPage(currentPage - 1)"
-          :disabled="currentPage <= 1"
-          aria-label="Previous page"
+        class="link"
+        aria-label="Previous page"
+        :disabled="currentPage <= 1"
+        @click="goToPage(currentPage - 1)"
       >
         ‹
       </button>
     </li>
 
     <li
-        v-for="(item, idx) in paginationItems"
-        :key="idx"
-        class="page__item"
-        :class="{ active: item === currentPage }"
+      v-for="(item, idx) in paginationItems"
+      :key="idx"
+      class="page__item"
+      :class="{ active: item === currentPage }"
     >
       <button
-          v-if="typeof item === 'number'"
-          class="link"
-          @click="goToPage(item)"
+        v-if="typeof item === 'number'"
+        class="link"
+        @click="goToPage(item)"
       >
         {{ item }}
       </button>
@@ -84,10 +87,10 @@ const paginationItems = computed(() => {
 
     <li class="page__item">
       <button
-          class="link"
-          @click="goToPage(currentPage + 1)"
-          :disabled="currentPage >= pages"
-          aria-label="Next page"
+        class="link"
+        @click="goToPage(currentPage + 1)"
+        :disabled="currentPage >= pages"
+        aria-label="Next page"
       >
         ›
       </button>
